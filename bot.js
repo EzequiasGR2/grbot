@@ -92,46 +92,45 @@ client.on('messageCreate', message => {
 
 //goodbye & welcome.db
 
-client.on("guildMemberAdd", async (member) => {
+client.on('guildMemberAdd', member => {
   const guild = client.guilds.cache.get("1206410205907132496");
-  const channel = guild.channels.cache.get("1206410206293008386");
+  const channel = guild.channels.cache.get("1206410206293008385");
 
-  const embed = new EmbedBuilder()
-    .setColor("#7c2ae8")
-    .setAuthor(member.user.tag, member.user.displayAvatarURL())
-    .setTitle(`${member.user.username} entrou no servidor!`)
-    .setImage("https://c.tenor.com/6wzqcWGfih4AAAAC/tenor.gif")
-    .setDescription(`**${member.user.username}**, Olá, espero que você se divirta no meu servidor!`)
-    .setThumbnail(member.user.displayAvatarURL({ dynamic: true, format: "png", size: 1024 }))
-    .setTimestamp()
-    .setFooter();
-
-  channel.send({ embeds: [embed] });
+  const welembed = new EmbedBuilder()
+  .setColor("#7c2ae8")
+  .setAuthor({
+      name: member.user.tag,
+      iconURL: member.user.displayAvatarURL()
+  })
+  .setTitle(`${member.user.username} entrou no servidor!`)
+  .setImage("https://media.tenor.com/cM84j4ctDeMAAAAC/banner-anime.gif")
+  .setDescription(`**${member.user.username}**, Olá, espero que você se divirta no meu servidor!`)
+  .setThumbnail(member.user.displayAvatarURL({ dynamic: true, format: "png", size: 1024 }))
+  
+  channel.send({ embeds: [welembed] });
 });
 
 //////////////////////////////////////////////////////////////////////
 
-client.on("guildMemberRemove", async (member) => {
+client.on('guildMemberRemove', member => {
   const guild = client.guilds.cache.get("1206410205907132496");
   const channel = guild.channels.cache.get("1206410206293008386");
 
-  const embed = new EmbedBuilder()
+    const byeembed = new EmbedBuilder()
     .setColor("#7c2ae8")
-    .setAuthor(member.user.tag, member.user.displayAvatarURL())
-    .setTitle(`${member.user.username} saiu do servidor!`)
-    .setImage("https://c.tenor.com/ucq2ha2PiigAAAAC/tenor.gif")
-    .setDescription(`**${member.user.username}**, foi para o death note 📓!`)
-    .setThumbnail(member.user.displayAvatarURL({ dynamic: true, format: "png", size: 1024 }))
-    .setTimestamp()
-    .setFooter();
+    .setAuthor({
+        name: member.user.tag,
+        iconURL: member.user.displayAvatarURL()
+    })
+      .setTitle(`${member.user.username} saiu do servidor!`)
+      .setImage("https://media.tenor.com/cM84j4ctDeMAAAAC/banner-anime.gif")
+      .setDescription(`**${member.user.username}**, foi para o death note 📓!`)
+      
 
-  channel.send({ embeds: [embed] });
+  channel.send({ embeds: [byeembed] });
 });
 
 //botões
-const openticket = require('./util/openticket');
-const closeticket = require('./util/closeticket');
-
 client.on('interactionCreate', async (interaction) => {
   if (!interaction.isButton()) return;
 
