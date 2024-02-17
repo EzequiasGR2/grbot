@@ -1,0 +1,20 @@
+{
+  "files": {
+    "events/player/playSong.js": [
+      {
+        "id": "b34d0989-b901-407b-82d7-04d8aecdcc18",
+        "line": 1,
+        "version": 13,
+        "index": 0
+      }
+    ],
+    "util/pw.js": [
+      {
+        "id": "88bc975c-5e83-4ee6-b161-89610aa5012d",
+        "line": 23,
+        "version": 3,
+        "index": 966
+      }
+    ]
+  }
+}
