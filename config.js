@@ -1,5 +1,5 @@
 module.exports = {
-  TOKEN: "",
+  TOKEN: env.TOKEN,
   ownerID: ["", "815259952506994698"],
   botInvite: "",
   supportServer: "",
